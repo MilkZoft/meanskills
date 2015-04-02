@@ -1,0 +1,43 @@
+/* Header styles */
+header {
+    background-color: @headerBgColor;
+    border-bottom: 1px solid @lighGray;
+    height: 45px;
+    line-height: 33px;
+    width: 100%;
+
+    .header-wrapper {
+        margin: 0 auto;
+        width: 1300px;
+
+        /* Logo styles */
+        .createLogo();
+
+        /* Header menu styles */
+        .header-menu {
+            font-size: 14px;
+            float: left;
+            margin-left: 25px;
+
+            ul {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                line-height: 50px;
+
+                li {
+                    display: inline-block;
+                    padding-left: 20px;
+
+                    .createColorClasses(mongo, @mongoColor);
+                    .createColorClasses(express, @expressColor);
+                    .createColorClasses(angular, @angularColor);
+                    .createColorClasses(node, @nodeColor);
+                    .createColorClasses(js, @jsColor);
+                    .createColorClasses(html5, @html5Color);
+                    .createColorClasses(css3, @css3Color);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,80 @@
+/* Borders */
+.borderRadius (@radius: 5px) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+}
+
+/* Classes factory */
+.createColorClasses(@className, @color) {
+    a.@{className} {
+        display: block;
+
+        &::first-letter {
+            color: @color;
+            font-weight: 500;
+        }
+
+        &:hover {
+            color: @color;
+        }
+
+        &.selected {
+            color: @color;
+        }
+    }
+}
+
+/* Logo */
+.createLogo() {
+    .logo {
+        position: relative;
+        float: left;
+        padding-top: 2px;
+        width: 151px;
+
+        .logo-circle {
+            .borderRadius(50%);
+            background-color: @black;
+            color: @logoCircleColor;
+            font-size: 1.6em;
+            height: 40px;
+            line-height: 40px;
+            text-indent: 9px;
+            width: 40px;
+        }
+
+        .logo-wrapper {
+            color: #333;
+            font-family: 'Montserrat';
+            font-size: 1.1em;
+            position: absolute;
+            right: 0px;
+            top: 10%;
+
+            .logo-express {
+                color: @expressColor;
+            }
+
+            .logo-angular {
+                color: @angularColor;
+            }
+
+            .logo-node {
+                color: @nodeColor;
+            }
+
+            .logo-skills {
+                display: inline-block;
+
+                &::first-letter {
+                    font-size: 1.3em;
+                }
+            }
+
+            .logo-domain {
+                font-size: 9px;
+            }
+        }
+    }
+}
