@@ -36,6 +36,20 @@
     top: @top;
 }
 
+.displayDownArrow() {
+    .selected {
+        .down-arrow {
+            .createDownArrow(@headerBgColor);
+        }
+    }
+
+    &:hover {
+        .down-arrow {
+            .createDownArrow(@headerBgColor);
+        }
+    }
+}
+
 /* Logo */
 .createLogo() {
     .logo {
@@ -48,7 +62,7 @@
             .borderRadius(50%);
             background-color: @black;
             color: @logoCircleColor;
-            font-size: 1.6em;
+            font-size: 26px;
             font-weight: 600;
             height: 40px;
             line-height: 40px;
@@ -59,7 +73,7 @@
         .logo-wrapper {
             color: #333;
             font-family: 'Montserrat';
-            font-size: 1.1em;
+            font-size: 18px;
             position: absolute;
             right: 0px;
             top: 10%;
@@ -80,7 +94,7 @@
                 display: inline-block;
 
                 &::first-letter {
-                    font-size: 1.3em;
+                    font-size: 21px;
                 }
             }
 
@@ -89,4 +103,11 @@
             }
         }
     }
+}
+
+/* Lists */
+.resetUl() {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
