@@ -8,6 +8,10 @@
       "description": "Aprende a programar"
     }
   },
+  "menu": {
+    "register": "Registro",
+    "login": "Conectar"
+  },
   "blog" : {
     "posts": {
       "title": "Título de la publicación"

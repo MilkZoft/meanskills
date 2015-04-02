@@ -8,6 +8,10 @@
       "description": "Learn to code"
     }
   },
+  "menu": {
+    "register": "Register",
+    "login": "Login"
+  },
   "blog" : {
     "posts": {
       "title": "Post title"
