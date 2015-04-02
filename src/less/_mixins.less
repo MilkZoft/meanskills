@@ -25,6 +25,17 @@
     }
 }
 
+/* Figures */
+.createDownArrow(@color, @size: 8px, @top: 45px) {
+    border-left: @size solid transparent;
+    border-right: @size solid transparent;
+    border-top: @size solid @color;
+    display: block;
+    left: 50%;
+    position: absolute;
+    top: @top;
+}
+
 /* Logo */
 .createLogo() {
     .logo {
@@ -38,6 +49,7 @@
             background-color: @black;
             color: @logoCircleColor;
             font-size: 1.6em;
+            font-weight: 600;
             height: 40px;
             line-height: 40px;
             text-indent: 9px;
