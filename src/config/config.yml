@@ -1,0 +1,51 @@
+---
+production: &default
+  serverPort: 3333
+  baseUrl: http://www.meanskills.com
+  cookieDomain: .meanskills.com
+  views:
+    minify: true
+    lessPrecompile: true
+  html:
+    engine: handlebars
+    extension: .hbs
+    layout: main
+  redis:
+    host: localhost
+    port: 6379
+  controllers:
+    default: home
+    blog:
+      postPerPage: 12
+  languages:
+    default: en
+    list: [en, es, fr, pt, ge, jp, ch]
+  security:
+    secret: m34nskills.c0m
+  database:
+    mysql:
+      host: 127.0.0.1
+      user: root
+      password:
+      database: meanskills
+      port: 3306
+      debug: true
+      socket: /var/mysql/mysql.sock
+    mongodb:
+      uri: mongodb://localhost/
+      database: meanskills
+
+stage: &stage
+  <<: *default
+  baseUrl: http://stage.meanskills.com
+
+latest: &latest
+  <<: *stage
+  baseUrl: http://latest.meanskills.com
+
+development:
+  <<: *latest
+  baseUrl: http://local.meanskills.com
+  views:
+    minify: false
+    lessPrecompile: false

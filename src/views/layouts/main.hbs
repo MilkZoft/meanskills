@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="{{ __.site.language }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-language" content="{{ __.site.language }}" />
+    <meta name="title" content="{{ __.site.title }}" />
+    <meta name="keywords" content="{{ __.site.meta.keywords }}" />
+    <meta name="abstract" content="{{ __.site.meta.abstract }}" />
+    <meta name="description" content="{{ __.site.meta.description }}" />
+    {{#if isMobile}}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{/if}}
+
+    <title>{{ __.site.title }}</title>
+
+    {{#css}}
+    <link rel="stylesheet" href="{{ this }}" />
+    {{/css}}
+  </head>
+
+  <body>
+    {{#if isMobile}}
+      {{> mobile/site/header }}
+      {{> mobile/site/sidebar }}
+      {{> mobile/site/content }}
+      {{> mobile/site/footer }}
+    {{else}}
+      {{> desktop/site/header }}
+      {{> desktop/site/sidebar }}
+      {{> desktop/site/content }}
+      {{> desktop/site/footer }}
+    {{/if}}
+
+    {{#bottomJs}}
+    <script type="application/javascript" src="{{ this }}"></script>
+    {{/bottomJs}}
+  </body>
+</html>
