@@ -1,15 +1,23 @@
 var device = false;
+var deviceWidth  = window.screen.width;
+var deviceHeight = window.screen.height;
 
-if (window.screen.height === 1024) {
+// Apple devices
+if (deviceWidth === 768 && deviceHeight === 1024) {
   device = 'ipad';
-} else if (window.screen.height === 736) {
+} else if (deviceWidth === 414 && deviceHeight === 736) {
   device = 'iphone6plus';
-} else if (window.screen.height === 667) {
+} else if (deviceWidth === 375 && deviceHeight === 667) {
   device = 'iphone6';
-} else if (window.screen.height === 568) {
+} else if (deviceWidth === 320 && deviceHeight === 568) {
   device = 'iphone5';
-} else if (window.screen.height === 480) {
+} else if (deviceWidth === 320 && deviceHeight === 480) {
   device = 'iphone4';
+}
+
+// Samsung devices
+if (deviceWidth === 854 || deviceHeight === 854) {
+  device = 'galaxymega';
 }
 
 if (device) {

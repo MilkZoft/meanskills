@@ -1,5 +1,11 @@
 $(function() {
-  $('.toggle-nav').click(function() {
+  $('.toggle-nav').on('click', function() {
+    $('body').toggleClass('show-nav');
+
+    return false;
+  });
+
+  $('.content').on('click', function() {
     $('body').toggleClass('show-nav');
 
     return false;
