@@ -1,0 +1,20 @@
+@import '_mixins';
+
+@minWidth: 375px;
+@maxWidth: 667px;
+@orientation: landscape;
+
+@media only screen
+and (min-device-width: @minWidth)
+and (max-device-width: @maxWidth) {
+    .removeHeaderOptions();
+    .centerLogo();
+    .displayDeviceMenu(18px, 45px);
+}
+
+@media only screen
+and (min-device-width: @minWidth)
+and (max-device-width: @maxWidth)
+and (orientation: @orientation)  {
+    .modifyDeviceMenuSize(15px, 35px);
+}
