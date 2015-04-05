@@ -52,8 +52,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Sending config to templates
 app.use(function(req, res, next) {
-    res.locals.config = config();
-    next();
+  res.locals.config = config();
+  next();
 });
 
 // Disabling x-powered-by
