@@ -24,20 +24,14 @@ module.exports = function(app) {
 
   // default css and js
   app.use(function(req, res, next) {
-    if (utils.isMobile(req.headers['user-agent'])) {
-      res.locals.css = [
-        '/css/mobile/style.css'
-      ];
-    } else {
-      res.locals.css = [
-        '/css/desktop/style.css'
-      ];
-    }
+    res.locals.css = [
+      '/css/style.css'
+    ];
 
     res.locals.bottomJs = [
-      '/bower_components/angular/angular.js',
-      '/bower_components/lodash/dist/lodash.min.js',
-      '/bower_components/restangular/dist/restangular.js'
+      '/bower_components/jquery/dist/jquery.min.js',
+      '/js/device-detector.js',
+      '/js/menu.js'
     ];
 
     next();
