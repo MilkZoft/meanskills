@@ -51,17 +51,33 @@
 }
 
 /* Logo */
-.createLogo() {
+.createLogo(@float: left, @marginTop: 0, @forceGrayColor: false) {
     .logo {
         position: relative;
-        float: left;
+        float: @float;
         padding-top: 2px;
         width: 151px;
+
+        &:hover {
+            .logo-wrapper {
+                .logo-express {
+                    color: @expressColor;
+                }
+
+                .logo-angular {
+                    color: @angularColor;
+                }
+
+                .logo-node {
+                    color: @nodeColor;
+                }
+            }
+        }
 
         .logo-circle {
             .borderRadius(50%);
             background-color: @black;
-            color: @logoCircleColor;
+            color: @grayWhite;
             font-size: 26px;
             font-weight: 600;
             height: 40px;
@@ -77,17 +93,31 @@
             position: absolute;
             right: 0px;
             top: 10%;
+            margin-top: @marginTop;
 
             .logo-express {
                 color: @expressColor;
+
+                & when (@forceGrayColor = true) {
+                    color: @gray;
+                }
             }
 
             .logo-angular {
                 color: @angularColor;
+
+                & when (@forceGrayColor = true) {
+                    color: @gray;
+                }
+
             }
 
             .logo-node {
                 color: @nodeColor;
+
+                & when (@forceGrayColor = true) {
+                    color: @gray;
+                }
             }
 
             .logo-skills {
@@ -103,6 +133,17 @@
             }
         }
     }
+}
+
+.createLogoFooter() {
+    .createLogo(right, 4px, true);
+}
+
+.prefix(@property-name, @value) {
+    -webkit-@{property-name}: @value;
+    -moz-@{property-name}: @value;
+    -o-@{property-name}: @value;
+    @{property-name}: @value;
 }
 
 /* Lists */
