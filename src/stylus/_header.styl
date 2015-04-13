@@ -1,0 +1,54 @@
+/* Header styles */
+header
+    background-color headerBgColor
+    height 45px
+    line-height 33px
+    width 100%
+    position relative
+
+    .header-wrapper
+        font-size 14px
+        margin 0 auto
+        width 96%
+
+        /* Logo styles */
+        $createLogo()
+
+        /* Header menu styles */
+        .header-menu
+            float left
+            margin-left 25px
+
+            ul
+                $resetUl()
+                line-height 50px
+
+                li
+                    display inline-block
+                    padding-left 20px
+                    position relative
+
+                    $createColorClasses(mongo, mongoColor)
+                    $createColorClasses(express, expressColor)
+                    $createColorClasses(angular, angularColor)
+                    $createColorClasses(node, nodeColor)
+                    $createColorClasses(js, jsColor)
+                    $createColorClasses(html5, html5Color)
+                    $createColorClasses(css3, css3Color)
+                    $displayDownArrow()
+
+        .header-connect
+            float right
+
+            ul
+                $resetUl()
+                line-height 50px
+
+                li
+                    display inline-block
+                    padding-left 20px
+                    position relative
+
+                    $createColorClasses(register, registerColor)
+                    $createColorClasses(login, loginColor)
+                    $displayDownArrow()

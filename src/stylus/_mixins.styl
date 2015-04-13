@@ -1,0 +1,112 @@
+/* Borders */
+$borderRadius(radius = 5px)
+    border-radius radius
+
+/* Classes factory */
+$createColorClasses(className, color)
+    a.{className}
+        display block
+
+        &::first-letter
+            color color
+            font-weight 500
+
+        &:hover
+            color color
+
+        &.selected
+            color color
+
+/* Figures */
+$createDownArrow(color, size = 8px, top = 45px)
+    border-left size solid transparent
+    border-right size solid transparent
+    border-top size solid color
+    display block
+    left 50%
+    position absolute
+    top top
+
+$displayDownArrow()
+    .selected
+        .down-arrow
+            $createDownArrow(headerBgColor)
+
+    &:hover
+        .down-arrow
+            $createDownArrow(headerBgColor)
+
+/* Logo */
+$createLogo(float = left, marginTop = 0, forceGrayColor = false)
+    .logo
+        position relative
+        float float
+        padding-top 2px
+        width 151px
+
+        &:hover
+            .logo-wrapper
+                .logo-express
+                    color expressColor
+
+                .logo-angular
+                    color angularColor
+
+                .logo-node
+                    color nodeColor
+
+        .logo-circle
+            $borderRadius(50%)
+            background-color black
+            color grayWhite
+            font-size 26px
+            font-weight 600
+            height 40px
+            line-height 40px
+            text-indent 9px
+            width 40px
+
+        .logo-wrapper
+            color #333
+            font-family 'Montserrat'
+            font-size 18px
+            margin-top marginTop
+            position absolute
+            right 0px
+            top 10%
+
+            .logo-express
+                color expressColor
+
+                if forceGrayColor
+                    color gray
+
+            .logo-angular
+                color angularColor
+
+                if forceGrayColor
+                    color gray
+
+            .logo-node
+                color nodeColor
+
+                if forceGrayColor
+                    color gray
+
+            .logo-skills
+                display inline-block
+
+                &::first-letter
+                    font-size 21px
+
+            .logo-domain
+                font-size 9px
+
+$createLogoFooter()
+    $createLogo(right, 4px, true)
+
+/* Lists */
+$resetUl()
+    margin 0
+    padding 0
+    list-style none

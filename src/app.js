@@ -19,9 +19,12 @@ var cookieParser = require('cookie-parser');
 app.use(cookieParser());
 
 // layout
-var less = require('less-middleware');
 var exphbs = require('express-handlebars');
 var hbsHelpers = require('./lib/helpers/handlebars');
+
+// stylus
+var stylus = require('stylus');
+var nib = require('nib');
 
 // Handlebars setup
 app.engine(config().html.extension, exphbs({
@@ -33,16 +36,19 @@ app.engine(config().html.extension, exphbs({
 }));
 
 // compile less for styles on the fly
-if (!config().lessPrecompile) {
-  app.use(less('/less', {
-    pathRoot: __dirname,
-    dest: '/public',
-    preprocess: {
-      path: function(path) {
-        return path.replace('/css/', '/');
+if (!config().views.stylusPrecompile) {
+  app.use(
+    stylus.middleware({
+      src: __dirname + '/stylus',
+      dest: __dirname + '/public/css',
+      compile: function (str, path) {
+        return stylus(str)
+                .set('filename', path)
+                .set('compress', config().views.minify)
+                .use(nib());
       }
-    }
-  }));
+    })
+  );
 }
 
 // view engine setup

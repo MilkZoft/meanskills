@@ -5,7 +5,7 @@ production: &default
   cookieDomain: .meanskills.com
   views:
     minify: true
-    lessPrecompile: true
+    stylusPrecompile: true
   html:
     engine: handlebars
     extension: .hbs
@@ -48,4 +48,4 @@ development:
   baseUrl: http://local.meanskills.com
   views:
     minify: false
-    lessPrecompile: false
+    stylusPrecompile: false
