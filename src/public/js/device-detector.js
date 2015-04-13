@@ -1,4 +1,4 @@
-var device = false;
+var device = 'desktop';
 var deviceWidth  = window.screen.width;
 var deviceHeight = window.screen.height;
 
@@ -17,14 +17,12 @@ if (deviceWidth === 768 && deviceHeight === 1024) {
   device = 'general';
 }
 
-if (device) {
-  var head = document.getElementsByTagName('head')[0];
-  var link = document.createElement('link');
+var head = document.getElementsByTagName('head')[0];
+var link = document.createElement('link');
 
-  link.rel  = 'stylesheet';
-  link.type = 'text/css';
-  link.href = '/css/mediaqueries/' + device + '.css';
-  link.media = 'all';
+link.rel  = 'stylesheet';
+link.type = 'text/css';
+link.href = '/css/mediaqueries/' + device + '.css';
+link.media = 'all';
 
-  head.appendChild(link);
-}
+head.appendChild(link);
