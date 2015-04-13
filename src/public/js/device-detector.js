@@ -13,11 +13,8 @@ if (deviceWidth === 768 && deviceHeight === 1024) {
   device = 'iphone5';
 } else if (deviceWidth === 320 && deviceHeight === 480) {
   device = 'iphone4';
-}
-
-// Samsung devices
-if (deviceWidth === 854 || deviceHeight === 854) {
-  device = 'galaxymega';
+} else if (deviceWidth < 1024) {
+  device = 'general';
 }
 
 if (device) {
