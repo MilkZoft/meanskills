@@ -10,10 +10,8 @@ $createColorClasses(className, color)
         &::first-letter
             color color
             font-weight 500
-
         &:hover
             color color
-
         &.selected
             color color
 
@@ -31,7 +29,6 @@ $displayDownArrow()
     .selected
         .down-arrow
             $createDownArrow(headerBgColor)
-
     &:hover
         .down-arrow
             $createDownArrow(headerBgColor)
@@ -48,10 +45,8 @@ $createLogo(float = left, marginTop = 0, forceGrayColor = false)
             .logo-wrapper
                 .logo-express
                     color expressColor
-
                 .logo-angular
                     color angularColor
-
                 .logo-node
                     color nodeColor
 
@@ -77,19 +72,16 @@ $createLogo(float = left, marginTop = 0, forceGrayColor = false)
 
             .logo-express
                 color expressColor
-
                 if forceGrayColor
                     color gray
 
             .logo-angular
                 color angularColor
-
                 if forceGrayColor
                     color gray
 
             .logo-node
                 color nodeColor
-
                 if forceGrayColor
                     color gray
 
