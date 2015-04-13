@@ -41,7 +41,7 @@ if (!config().views.stylusPrecompile) {
     stylus.middleware({
       src: __dirname + '/stylus',
       dest: __dirname + '/public/css',
-      compile: function (str, path) {
+      compile: function(str, path) {
         return stylus(str)
                 .set('filename', path)
                 .set('compress', config().views.minify)
